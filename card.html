@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ef6be5e094.js" crossorigin="anonymous"></script>
+    <title>Card design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #222327;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #card {
+            width: 400px;
+            height: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            overflow: hidden;
+        }
+        #card .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            color: #0984e2;
+            border: 2px solid #0984e2;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #card .icon i {
+            font-size: 2.5rem;
+        }
+
+        #card .text h1 {
+            color: #0984e2;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #card .text p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div class="icon">
+            <i class="fa-solid fa-child"></i>
+        </div>
+        <div class="text">
+            <h1>Sample Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nulla ipsa aut odit quidem eaque facilis, reprehenderit expedita odio </p>
+        </div>
+    </div>
+</body>
+</html>
