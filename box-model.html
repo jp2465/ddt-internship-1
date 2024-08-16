@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Model</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        div{
+            width: 200px;
+            height: 200px;
+            /* background-color: blueviolet; */
+            margin: 10px;
+            padding: 10px;
+            border: 5px solid #111;
+        }
+        .content-box{
+            box-sizing: content-box;
+            background-image: url(/37794.webp); 
+
+
+        }
+        .content-box h1,
+        .content-box a{
+            font-size: 20px;
+            color: aqua;
+            text-transform:uppercase;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+
+        }
+
+        .border-box{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>PRActice</h1>
+        <a href="https://duodev.in/">Hello</a>
+    </div>
+    <div class="border-box">
+
+    </div>
+</body>
+</html>
