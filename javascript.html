@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <h1 id="first-heading" class="heading">
+            Heading
+            <span>1</span>
+        </h1>
+
+        <h2 id="cse">
+            CSE
+        </h2>
+
+        <input type="text" id="colorname" placeholder="Enter Color Name">
+        <button id="color"
+            onclick="colorChange('first-heading')">Change
+            Color</button>
+
+        <script>
+
+            var h1 = document.getElementById('first-heading');
+            h1.innerHTML = "Full <span>Stack</span>";
+            h1.style.color = "red";
+            h1.style.fontSize = "6rem";
+
+            function colorChange(elId) {
+                var clr = document.getElementById('colorname').value;
+
+                var el = document.getElementById(elId);
+                el.style.color = clr;
+            }
+        </script>
+    </body>
+</html>
