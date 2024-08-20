@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <form method="post">
+            <input type="file" accept="image/*">
+            <input type="checkbox" name id="male">
+            <label for="male">Male</label>
+
+            <input type="radio" name id="female">
+            <label for="female">Female</label>
+
+            <br>
+            <textarea name id rows="3" cols="30">
+                Hello
+            </textarea>
+
+            <br>
+            <select name id>
+                <option value></option>
+                <option value="M">Male</option>
+                <option value="F" selected>Female</option>
+            </select>
+
+            <br>
+            <br>
+
+            <br><br>
+            <button>SUBMIT</button>
+
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" value="JP" id="fname"
+                    placeholder="First Name"
+                    required readonly>
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="fname" value="JP" id="fname"
+                    placeholder="Last Name"
+                    required readonly>
+            </div>
+        </form>
+    </body>
+</html>
