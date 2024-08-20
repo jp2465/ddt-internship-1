@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="computer" class="first-computer">computer</h1>
+    <input type="text" id="first-computer" placeholder="Enter the color">
+    <button id="color"
+    onclick="colorchange('computer')">colorchange</button>
+    <script>
+        var h1 =document.getElementById("computer")
+
+        function colorchange(elId){
+            var h1 =document.getElementById(elId)
+            var clr =document.getElementById("first-computer").value
+            h1.style.color =clr
+
+        }
+        
+
+        
+    </script>
+
+
+</body>
+</html>

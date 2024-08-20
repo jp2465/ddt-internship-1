@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body> 
+    <h1 id="hello-world" class="world">hello world</h1>
+    <button id="color"
+    onclick="ColorChange('hello-world')">Change
+    Color</button>
+
+
+    <script>
+
+        function ColorChange(elId){
+            var  el = document.getElementById(elId);
+            el.style.color="blue"
+        }
+    </script>
+
+
+    
+</body>
+</html>
