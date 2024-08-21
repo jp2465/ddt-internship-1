@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Properties</title>
+
+    <style>
+
+        h1 {
+            font-size: 2rem;
+            color: red;
+            transition: all 0.5s ease;
+        }
+
+        h1.active {
+            color: blue;
+            transform: translateX(50px);
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="">Sample Heading</h1>
+
+    <button onclick="activeClass()">click me</button>
+
+    <img alt="example image" id="image">
+
+    <a id="link">Hello</a>
+    <script>
+        function activeClass() {
+            var headContent = document.getElementById("heading");
+            headContent.classList.toggle("active")
+        }
+
+        var img = document.getElementById("image")
+        // img.src = "./37794.webp";
+
+        var link = document.getElementById("link")
+        link.href = "https://google.com";
+
+    </script>
+</body>
+</html>
