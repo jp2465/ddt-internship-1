@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://kit.fontawesome.com/ef6be5e094.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #0984e2;
+            --light: #f5f5f5;
+            --white: #fff;
+            --dark: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav .brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            text-wrap: nowrap;
+        }
+
+        nav .brand img {
+            width: auto;
+            height: 60px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        nav .nav-links li a {
+            height: 80px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 30px 10px;
+            font-size: 0.75rem;
+            font-weight: 550;
+            color: var(--dark);
+            text-wrap: nowrap;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+        }
+
+        nav .nav-links li a.active,
+        nav .nav-links li a:hover {
+            color: var(--light);
+            background-color: var(--primary);
+        }
+
+        section.landing {
+            width: min(90%, 1200px);
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .landing .left-section {
+            width: 50%;
+            height: auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5) url(./logo.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-radius: 18px;
+        }
+
+        .landing .left-section h2 {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .landing .left-section p {
+            color: var(--light);
+            text-align: center;
+            margin-top: 10px;
+            padding: 20px 10px;
+            line-height: 30px;
+        }
+
+        .landing .right-section {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .landing .right-section .card {
+            width: 200px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .landing .right-section .card .icon {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .landing .right-section .card .icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .landing .right-section .card h2 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .landing .right-section .card p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .contact {
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact div {
+            width: 50%;
+            padding: 20px;
+            color: white;
+        }
+
+        .contact .left-section h2 {
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .contact .left-section h2 ~ span {
+            width: 80px;
+            height: 3px;
+            display: block;
+            background: var(--primary);
+        }
+
+        .contact .left-section .contact-item {
+            display: block;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .contact .left-section .contact-item span {
+            display: block;
+            margin: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact .left-section .contact-item span:first-child {
+            font-size: 1.2rem;
+        }
+
+        .contact .left-section .contact-item span:first-child i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact .right-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact .right-section form .input-container {
+            display: flex;
+            width: 100%;
+        }
+        .contact .right-section form .input-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .contact .right-section form .input-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .contact .right-section form .input-group input,
+        .contact .right-section form .input-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            color: var(--white);
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--light);
+            resize: none;
+        }
+        
+        .contact .right-section form .input-group input:focus,
+        .contact .right-section form .input-group textarea:focus {
+            border-bottom: 2px solid var(--primary);
+            outline: none;
+        }
+
+        .contact .right-section form button {
+            width: 90%;
+            padding: 12px 15px;
+            color: var(--white);
+            background-color: var(--primary);
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="brand" href="/">
+            <img src="./logo.png" alt="Brand Logo">
+            <span>Duo Dev Technologies</span>
+        </a>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#">About Us</a>
+            </li>
+            <li>
+                <a href="#">Product</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Testimonials</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="landing">
+        <div class="left-section">
+            <h2>What Our Company Does</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, reprehenderit sequi, eaque enim dolorum doloremque velit placeat hic sed rerum facilis labore voluptatibus repellendus ad eius dolorem error officiis dignissimos.
+                Quo sit optio esse quia sapiente consectetur aliquam ad consequatur deserunt eaque temporibus commodi totam repudiandae aliquid dolor velit quod quos voluptatibus, beatae adipisci! Voluptatem laborum sequi nostrum officia est.
+                Quo sit optio esse quia sapiente consectetur aliquam ad consequatur deserunt eaque temporibus commodi totam repudiandae aliquid dolor velit quod quos voluptatibus, beatae adipisci! Voluptatem laborum sequi nostrum officia est.
+            </p>
+        </div>
+        <div class="right-section">
+            <div class="card">
+                <span class="icon">
+                    <i class="fa-solid fa-child"></i>
+                </span>
+                <h2>Class Room Training</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur consectetur,?
+                </p>
+            </div>
+            <div class="card">
+                <span class="icon">
+                    <i class="fa-solid fa-child"></i>
+                </span>
+                <h2>Class Room Training</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur consectetur, ?
+                </p>
+            </div>
+            <div class="card">
+                <span class="icon">
+                    <i class="fa-solid fa-child"></i>
+                </span>
+                <h2>Class Room Training</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur consectetur, ?
+                </p>
+            </div>
+            <div class="card">
+                <span class="icon">
+                    <i class="fa-solid fa-child"></i>
+                </span>
+                <h2>Class Room Training</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur consectetur, ?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="left-section">
+            <h2>
+                Contact Us
+            </h2>
+            <span></span>
+
+            <a href="tel:+918111090250" class="contact-item">
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    Call Us
+                </span>
+                <span>
+                    +91 81110 90250
+                </span>
+            </a>
+            <a href="mailto:contact@duodev.in" class="contact-item">
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </span>
+                <span>
+                    contact@duodev.in
+                </span>
+            </a>
+            <a href="#" class="contact-item">
+                <span>
+                    <i class="fa-solid fa-map-pin"></i>
+                    Location
+                </span>
+                <span>
+                    3rd Street, Gandhi Nagar, Erode
+                </span>
+            </a>
+        </div>
+        <div class="right-section">
+            <form action="#">
+                <h2>Feel Free To Ask Us Anythink!</h2>
+                <div class="input-container">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter Your Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone No</label>
+                        <input type="tel" id="phone" placeholder="Enter Your Phone Number">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Your Email Address">
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="3" placeholder="Enter Your Message"></textarea>
+                </div>
+                <button>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>
