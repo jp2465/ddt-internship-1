@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List with HTML, CSS, JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <form>
+            <input type="text" name="task" id="task" placeholder="Enter the task">
+            <button type="button" id="add">ADD</button>
+        </form>
+
+        <ul id="task-list">
+
+        </ul>
+    </div>
+
+    <script>
+        const tasks = JSON.parse(window.localStorage.getItem('tasks'));
+        
+        if (tasks) {
+            for (var i = 0; i < tasks.length; i++) {
+                newTask(tasks[i]);
+            }
+        }
+
+        function newTask(task) {
+            const ul = document.getElementById("task-list");
+
+            var completed = task.is_completed ? 'completed' : '';
+            var checked = task.is_completed ? 'checked' : ''; 
+
+            ul.innerHTML += `<li class="${completed}">
+                    <input type="checkbox" id="task-${i}" onchange="taskCompleted(this)" ${checked}>
+                    <label for="task-${i}">${task.task}</label>
+                    </li>`;
+        }
+
+        var btn = document.getElementById("add")
+        btn.addEventListener("click", function () {
+
+            var task = document.getElementById("task").value;
+            document.getElementById("task").value = "";
+
+            if (task == "") {
+                alert("Please enter the task")
+                return;
+            }
+
+            var oldTasks = window.localStorage.getItem('tasks');
+            if (! oldTasks) {
+                oldTasks = "[]";
+            }
+
+            oldTasks = JSON.parse(oldTasks);
+
+            var newTaskObj = {
+                "id": ( oldTasks.length + 1 ),
+                "task": task,
+                "is_completed": false
+            }
+
+           
+            oldTasks = [...oldTasks, newTaskObj];
+
+            window.localStorage.setItem('tasks', JSON.stringify(oldTasks));
+
+            newTask(newTaskObj);
+        });
+
+        function taskCompleted(el) {
+            if (el.checked) {
+                el.parentNode.classList.add("completed");
+            } else {
+                el.parentNode.classList.remove("completed");
+            }
+        }
+    </script>
+</body>
+
+</html>
