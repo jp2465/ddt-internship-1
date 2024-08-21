@@ -15,13 +15,15 @@
 }
 
 body {
-    background-color: var(--light);
+    background-color: #fff;
 }
 
 .container {
     width: min(500px, 90%);
+    min-height: 100vh;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--secondary);
 }
 
 .container h1 {
@@ -61,6 +63,10 @@ body {
 
 .container ul li {
     margin: 10px;
+}
+
+.container ul li input {
+    margin-right: 10px;
 }
 
 .container ul li.completed label {

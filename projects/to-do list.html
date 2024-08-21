@@ -37,7 +37,7 @@
             var checked = task.is_completed ? 'checked' : ''; 
 
             ul.innerHTML += `<li class="${completed}">
-                    <input type="checkbox" id="task-${i}" onchange="taskCompleted(this)" ${checked}>
+                    <input type="checkbox" id="task-${i}" onchange="taskCompleted( ${task.id},this)" ${checked}>
                     <label for="task-${i}">${task.task}</label>
                     </li>`;
         }
@@ -66,7 +66,6 @@
                 "is_completed": false
             }
 
-           
             oldTasks = [...oldTasks, newTaskObj];
 
             window.localStorage.setItem('tasks', JSON.stringify(oldTasks));
@@ -74,12 +73,18 @@
             newTask(newTaskObj);
         });
 
-        function taskCompleted(el) {
+        function taskCompleted( id, el) {
+            var tasks = JSON.parse(window.localStorage.getItem('tasks'));
+
             if (el.checked) {
+                tasks[id-1].is_completed = true;
                 el.parentNode.classList.add("completed");
             } else {
+                tasks[id-1].is_completed = false;
                 el.parentNode.classList.remove("completed");
             }
+
+            window.localStorage.setItem('tasks', JSON.stringify(tasks));
         }
     </script>
 </body>
