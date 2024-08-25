@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        .heading {
+            color: red;
+            font-size: 3rem;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1 id="heading">
+
+    </h1>
+
+    <input type="text" id="fname">
+
+    <button id="btn">Submit</button>
+
+    <br><br>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="show-hide">Show / Hide</button>
+
+    <div class="box"></div>
+
+    <script>
+
+        // Text Content
+        $("#heading").text("Heading");
+        
+        $("#heading").html("<span>Hi</span>");
+        
+        $("#fname").val("JP")
+        
+        $("#fname").attr("type", "password")
+        $("#fname").removeAttr("type")
+        
+        $("#btn").on("mouseover click", function(){
+            $("#heading").text($("#fname").val());
+        });
+
+        $('#heading').addClass("heading")
+        $("#heading").removeClass("heading");
+
+        $("#show").on("click", function(){
+            $(".box").slideDown(5000);
+        })
+        
+        $("#hide").on("click", function(){
+            $(".box").slideUp();
+        })
+
+        $("#show-hide").on("click", function(){
+            $(".box").slideToggle();
+        });
+
+    </script>
+
+</body>
+</html>

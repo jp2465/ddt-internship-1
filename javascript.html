@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+
+    <style> 
+
+        .heading {
+            font-size: 3rem;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 id="paragraph" class="active">
+        Sample Content
+        <span>1</span>
+    </h1>
+
+    <p class="sample">1</p>
+    <p class="sample">2</p>
+    <p class="sample">3</p>
+    <p class="sample">4</p>
+
+    <script>
+
+        var p = document.getElementById("paragraph");
+        
+
+        // // Text Content
+        // var str = p.innerText;
+        // console.log(str);
+        // // p.innerText = "Duo Dev";
+        // // console.log(p.innerText)
+
+        // // HTML Content
+        // var html = p.innerHTML;
+        // console.log(html);
+        // p.innerHTML = "<p>Duo Dev</p>";
+
+        // // By Class Name
+        // var sample = document.getElementsByClassName("sample");
+        // console.log(sample[0].innerText);
+
+        // // By Tag Name
+        // var para = document.getElementsByTagName("p");
+        // console.log(para[2].innerText);
+
+        // // Query  Selector
+        // var p1 = document.querySelector("#paragraph");
+
+        // // Class Add
+        // p.classList.add("heading")
+
+        // p.classList.remove("heading")
+
+        // if (p.classList.contains("active")) {
+        //     p.classList.remove("active");
+        //     console.log("active class removed")
+        // } else {
+        //     p.classList.add("active");
+        //     console.log("active class assigned");
+        // }
+
+
+        p.style.color = "red";
+        p.style.fontSize = "3rem";
+
+    </script>
+
+</body>
+</html>

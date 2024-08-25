@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 2</title>
+</head>
+<body>
+    
+    <img src="" alt="" id="image">
+
+    <a href="">Click Here</a>
+
+
+    <input type="text" id="fname" placeholder="Enter name">
+    <button onclick="getInput()" onmouseleave="getInput()">Submit</button>
+
+    <script>
+
+        // Image Attributes
+        var img = document.getElementById("image");
+        // img.src = "./assets/37794.webp";
+
+        var link = document.querySelector('a');
+        link.href = "https://google.com";
+
+        // alert("Some MEssage1");
+
+        // var c = confirm("Are you sure?");
+        // console.log(c);
+
+        // var val = prompt("Name: ", "DDT")
+        // console.log(val);
+
+
+        function getInput() {
+            var fname = document.getElementById("fname").value;
+
+            console.log(fname);
+
+        }
+
+
+        // window.localStorage.setItem("name", "JP");
+
+        // var name = window.localStorage.getItem("name");
+        // console.log(name)
+
+        var obj = {
+            name: "JP",
+            age: 21,
+            city: "Erode"
+        };
+
+        window.localStorage.setItem("user", JSON.stringify(obj));
+
+        var object = JSON.parse(window.localStorage.getItem("user"))
+    </script>
+</body>
+</html>

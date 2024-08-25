@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+
+    <style>
+
+        .box {
+            width: 700px;
+            height: 700px;
+            background: red;
+            margin: 10px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container .item {
+            min-width: 200px;
+            height: 200px;
+            margin: 10px;
+            background: red;
+        }
+
+        @media (max-width: 700px) {
+            .box {
+                width: 90%;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
